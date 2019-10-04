@@ -196,17 +196,17 @@ public class GoogleMaps extends FragmentActivity implements OnMapReadyCallback, 
         imageCar = findViewById(R.id.imageCarTransport2);
         imageCycle = findViewById(R.id.imageCycleTransport2);
         imageWalk = findViewById(R.id.imageWalkTransport2);
-
+    
         imageCar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference myRef = database.getReference();
-                prefferedMode = "CAR";
+                prefferedMode = "Vehicle";
                 imageCar.setBackgroundResource(R.drawable.circle);
                 imageCycle.setBackgroundResource(R.color.colorWhite);
                 imageWalk.setBackgroundResource(R.color.colorWhite);
-                user.setUser_StartTransport("CAR");
+                user.setUser_StartTransport("Vehicle");
                 myRef.child("Users").child(firebaseUser.getUid()).setValue(user);
             }
         });
